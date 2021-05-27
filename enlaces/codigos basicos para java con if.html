@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html>
+   <head>
+    <!--aqui estara el titulo de la pagina -->
+	<title> Proyecto Semestral </title>
+	
+	<audio  controls> 
+	<source src="cancion.mp3" type="audio/mp3">
+	<source src="cancion1.mp3" type="audio/mp3">
+	  </audio>
+ 
+ 
+	
+	 </head>
+ <style type="text/css">
+
+<!--
+
+body {
+
+background-attachment: fixed;
+
+background-image: url(fondo.jpg);
+
+background-repeat: no-repeat;
+
+background-position: center center;
+
+background-size:1500px } -->
+
+</style>
+      
+  
+
+	
+	
+	
+
+           
+  <center><b>  <h1> <font size="15" color="red">  <p style="background-color:#00A2FF;"> codigos basicos para java con if </font> </h1> </p> </b></center> 
+			
+
+	 
+	<center> <h1> <font size="15" color="black"> <P> <h4> En el método setValoresDeposito nos encontramos un código un tanto extraño: un if donde las instrucciones a ejecutar se encuentran vacías. Esto es admitido en Java, tanto en un if como en un else o en otras instrucciones. En este caso, el código equivale a: “Si el idDeposito es distinto de una cadena vacía y el valor_diametro es mayor que cero y el valor_altura es mayor que cero no se hace nada, y en caso contrario se han de ejecutar las instrucciones indicadas en el else”. Este tipo de construcciones no consideramos conveniente utilizarlas frecuentemente. Tan solo pueden ser indicadas cuando queremos remarcar que en determinadas circunstancias no se debe ejecutar ninguna instrucción. <br>
+	Otra cuestión a tener en cuenta es que de momento estamos desarrollando una programación informal: el sistema de comentarios no se atiene a lo establecido por el sistema de documentación de Java, y hemos incluido algunas sentencias de impresión por consola que normalmente no forman parte del código de los programas. Usaremos estas y otras técnicas informales con el fin de facilitar el aprendizaje, no porque puedan ser recomendadas como técnicas de programación.  <br>
+
+
+public class GrupoDepositos {
+    //Campos de la clase, algunos de ellos son tipo objetos de otra clase
+    private Deposito deposito1;
+    private Deposito deposito2;
+    private Deposito deposito3;
+    private String idGrupo;
+    private int numeroDepositosGrupo; <br>
+
+ //Constructor para la clase. En ella se crean objetos de otra clase.
+    public GrupoDepositos (int numeroDeDepositosGrupo, String valor_idGrupo) {
+    idGrupo = valor_idGrupo;        
+    switch (numeroDeDepositosGrupo) {
+            case 1: System.out.println ("Un grupo ha de tener más de un depósito"); break;
+            
+            case 2:
+            deposito1 = new Deposito(); /*Al crear el objeto automáticamente se llama al constructor del mismo, en este caso sin parámetros. ESTO ES EJEMPLO DE SINTAXIS DE CREACIÓN DE UN OBJETO, EN ESTE CASO DENTRO DE OTRO */
+            deposito2 = new Deposito();       
+            numeroDepositosGrupo = 2;
+            break;
+
+            case 3: deposito1 = new Deposito(); deposito2 = new Deposito(); deposito3 = new Deposito();
+            numeroDepositosGrupo = 3;
+            break;
+
+            default: System.out.println ("No se admiten más de tres depósitos");
+            //Esto no evita que se cree el objeto.
+            break;
+        } //Cierre del switch
+    } //Cierre del constructor. <br>
+
+public int getNumeroDepositosGrupo () { return numeroDepositosGrupo; }
+
+    public String getIdGrupo () { return idGrupo; }
+    public float capacidadDelGrupo () {       //Este método usa objetos de otra clase e invoca métodos de otra clase
+        if (numeroDepositosGrupo == 2) { return (deposito1.valorCapacidad() + deposito2.valorCapacidad() );
+        } else { return (deposito1.valorCapacidad() + deposito2.valorCapacidad()+ deposito3.valorCapacidad() ); }
+        //Si el grupo se ha creado con un número de depósitos distinto de 2 o 3 saltará un error en tiempo de ejecución
+    } //Cierre del método
+} //Cierre de la clase. <br>
+
+
+
+
+
+
+	</center> </h4>
+     </p>
+	
